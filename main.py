@@ -1,8 +1,13 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManage
 import time
 
-chrome_driver="/Users/divyansh_modi/Deve. tools/chromedriver"
-driver=webdriver.Chrome(executable_path=chrome_driver)
+#chrome_driver="/Users/divyansh_modi/Deve. tools/chromedriver"
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+
+#driver=webdriver.Chrome(executable_path=chrome_driver)
 price_list=[]
 all_items=[]
 driver.get("http://orteil.dashnet.org/experiments/cookie/")
